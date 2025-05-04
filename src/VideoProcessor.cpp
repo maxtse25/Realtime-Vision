@@ -1,4 +1,6 @@
 #include "VideoProcessor.hpp"
+#include "GrayscaleFilter.hpp"
+#include "BlurFilter.hpp"
 
 /**
  * @brief Default constructor.
@@ -49,6 +51,7 @@ bool VideoProcessor::isOpened() const noexcept {
  */
 void VideoProcessor::registerFilters() {
     filters['g'] = std::make_shared<GrayscaleFilter>();
+    filters['b'] = std::make_shared<BlurFilter>();
     filterNames['g'] = "Grayscale";
     currentFilter = filters['g'];
 }
@@ -93,6 +96,13 @@ void VideoProcessor::processFrames() {
         char key = static_cast<char>(cv::waitKey(10));
         if (key == 27 || key == 'q' || key == 'Q') {
             break;
+        }
+
+        // Allow runtime switching of filters by key
+        if (filters.count(key)) {
+            currentFilter = filters[key];
+            std::string name = filterNames.count(key) ? filterNames[key] : "Unknown";
+            std::cout << "[INFO] Switched to filter: " << name << " (key '" << key << "')" << std::endl;
         }
     }
 

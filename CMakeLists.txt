@@ -22,7 +22,7 @@ set(SOURCES
 )
 
 # Executable
-add_executable(RealTimeVision ${SOURCES} "src/GrayscaleFilter.cpp")
+add_executable(RealTimeVision ${SOURCES} "src/GrayscaleFilter.cpp" "src/BlurFilter.cpp")
 target_link_libraries(RealTimeVision PRIVATE ${OpenCV_LIBS})
 
 # GoogleTest
