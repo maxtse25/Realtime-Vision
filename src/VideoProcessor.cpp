@@ -1,6 +1,7 @@
 #include "VideoProcessor.hpp"
 #include "GrayscaleFilter.hpp"
 #include "BlurFilter.hpp"
+#include "EdgeDetectionFilter.hpp"
 
 /**
  * @brief Default constructor.
@@ -51,8 +52,14 @@ bool VideoProcessor::isOpened() const noexcept {
  */
 void VideoProcessor::registerFilters() {
     filters['g'] = std::make_shared<GrayscaleFilter>();
-    filters['b'] = std::make_shared<BlurFilter>();
     filterNames['g'] = "Grayscale";
+
+    filters['b'] = std::make_shared<BlurFilter>();
+    filterNames['b'] = "Blur";
+
+    filters['e'] = std::make_shared<EdgeDetectionFilter>();
+    filterNames['e'] = "Edge Detection";
+
     currentFilter = filters['g'];
 }
 
