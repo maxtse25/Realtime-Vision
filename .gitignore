@@ -1,0 +1,73 @@
+#------------------------------------------------------
+# User-specific Visual Studio files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+*.vcxproj.user
+
+# Optional: ignore solution/project files (keep if shared)
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+#------------------------------------------------------
+# Visual Studio cache folders
+.vs/
+
+#------------------------------------------------------
+# Build output (CMake, Visual Studio, Ninja, Make)
+build/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# Ninja build artifacts
+**/.ninja_deps
+**/.ninja_log
+**/build.ninja
+**/CMakeCache.txt
+
+#------------------------------------------------------
+# Intermediate & object files
+*.obj
+*.o
+*.lo
+*.idb
+*.pdb
+*.ilk
+*.ipch
+*.tlog
+*.pch
+*.mod
+*.exp
+
+#------------------------------------------------------
+# Executable & binary output
+*.exe
+*.dll
+*.lib
+*.so
+*.a
+*.dylib
+*.out
+
+#------------------------------------------------------
+# OS-specific & metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+#------------------------------------------------------
+# Editor/IDE config folders (optional)
+.vscode/
+.idea/
+
+#------------------------------------------------------
+# Logs
+*.log
