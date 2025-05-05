@@ -9,9 +9,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
-# Include directories
-include_directories(${OpenCV_INCLUDE_DIRS})
-
 # Include project headers
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
