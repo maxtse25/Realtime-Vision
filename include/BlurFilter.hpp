@@ -34,5 +34,5 @@ public:
 
 private:
 	int blurSize; // kernel sizes
-	bool trackbarCreated; // flag to check if trackbar is created
+	bool trackbarCreated; // trackbar creation flag
 };

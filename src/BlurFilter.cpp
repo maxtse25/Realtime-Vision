@@ -32,10 +32,10 @@ void BlurFilter::apply(const cv::Mat& input, cv::Mat& output) {
  */
 void BlurFilter::createTrackbar(const std::string& windowName) {
 	if (trackbarCreated) {
-		return; // Trackbar already created
+		return; // Avoid duplicate trackar creation
 	}
 	cv::createTrackbar("Blur Size", windowName, &blurSize, 31, onTrackbarChange, this);
-	trackbarCreated = true;
+	trackbarCreated = true; // Set the flag to true after creating the trackbar
 }
 
 /**
