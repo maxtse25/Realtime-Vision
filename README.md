@@ -8,6 +8,9 @@ A real-time video processing application built in modern C++ using OpenCV. This 
 
 * Real-time video processing from camera or stream
 * Grayscale filter with Picture-in-Picture (PIP) overlay
+* Blur filter with adjustable strength (trackbar UI)
+* Edge detection filter using Canny algorithm
+* Sepia tone filter using kernel transformation
 * Modular OOP design using virtual methods
 * Easy-to-extend filter architecture
 * Unit-tested `applyFilter()` using Google Test
@@ -81,14 +84,32 @@ You can also directly run the test executable:
 
 ---
 
+## 🎛️ Controls
+
+* Press `g` – Grayscale
+* Press `b` – Blur (adjustable)
+* Press `e` – Edge Detection (Canny)
+* Press `s` – Sepia tone
+* Press `q` / `ESC` – Quit
+
+---
+
 ## 📌 Roadmap
 
-* [x] Grayscale filter with preview
 * [ ] Add face detection + face blur
 * [ ] Implement filter switching with hotkeys
 * [ ] Add FPS counter and performance stats
 * [ ] Add video recording (via OpenCV VideoWriter)
 * [ ] Live parameter sliders for filter tuning
+
+---
+
+## 🎓 Learning Highlights
+
+* OOP architecture with polymorphism and virtual dispatch
+* OpenCV real-time frame processing and GUI
+* Modular system design for extensible filter plugins
+* CMake build system with Google Test integration
 
 ---
 
