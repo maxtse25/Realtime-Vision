@@ -16,4 +16,12 @@ public:
 	 * @param output Output frame (after filter applied).
 	 */
 	virtual void apply(const cv::Mat& input, cv::Mat& output) = 0;
+
+	/**
+	 * @brief Create a UI trackbar for controlling filter parameters.
+	 * @param windowName Name of the window where the trackbar will be created.
+	 */
+	virtual void createTrackbar(const std::string& windowName) {
+		// Default implementation does nothing
+	};
 };

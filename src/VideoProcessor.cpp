@@ -110,12 +110,14 @@ void VideoProcessor::processFrames() {
             currentFilter = filters[key];
             std::string name = filterNames.count(key) ? filterNames[key] : "Unknown";
             std::cout << "[INFO] Switched to filter: " << name << " (key '" << key << "')" << std::endl;
+        
+			// Trackers for filter-specific parameters
+			currentFilter->createTrackbar(windowProcessed);
+			}
         }
-    }
 
-    // Destroy all OpenCV windows
     cv::destroyAllWindows();
-}
+    }
 
 /**
  * @brief Applies a filter to the input frame. Default implementation converts the frame to grayscale.
