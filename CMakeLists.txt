@@ -1,4 +1,3 @@
-# CMakeLists.txt
 cmake_minimum_required(VERSION 3.15)
 project(RealTimeVision)
 
@@ -16,10 +15,15 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 set(SOURCES
     main.cpp
     src/VideoProcessor.cpp
+    src/GrayscaleFilter.cpp
+    src/BlurFilter.cpp
+    src/EdgeDetectionFilter.cpp
+    src/SepiaFilter.cpp
+    src/FaceBlurFilter.cpp
 )
 
 # Executable
-add_executable(RealTimeVision ${SOURCES} "src/GrayscaleFilter.cpp" "src/BlurFilter.cpp" "src/EdgeDetectionFilter.cpp" "src/SepiaFilter.cpp")
+add_executable(RealTimeVision ${SOURCES})
 target_link_libraries(RealTimeVision PRIVATE ${OpenCV_LIBS})
 
 # GoogleTest

@@ -3,6 +3,7 @@
 #include "BlurFilter.hpp"
 #include "EdgeDetectionFilter.hpp"
 #include "SepiaFilter.hpp"
+#include "FaceBlurFilter.hpp"
 
 /**
  * @brief Default constructor.
@@ -63,6 +64,9 @@ void VideoProcessor::registerFilters() {
 
     filters['s'] = std::make_shared<SepiaFilter>();
     filterNames['s'] = "Sepia";
+
+    filters['f'] = std::make_shared<FaceBlurFilter>();
+    filterNames['f'] = "Face Blur";
 
     currentFilter = filters['g'];
 }
