@@ -2,6 +2,7 @@
 #include "GrayscaleFilter.hpp"
 #include "BlurFilter.hpp"
 #include "EdgeDetectionFilter.hpp"
+#include "SepiaFilter.hpp"
 
 /**
  * @brief Default constructor.
@@ -59,6 +60,9 @@ void VideoProcessor::registerFilters() {
 
     filters['e'] = std::make_shared<EdgeDetectionFilter>();
     filterNames['e'] = "Edge Detection";
+
+    filters['s'] = std::make_shared<SepiaFilter>();
+    filterNames['s'] = "Sepia";
 
     currentFilter = filters['g'];
 }
