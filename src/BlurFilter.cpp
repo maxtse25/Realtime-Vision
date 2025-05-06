@@ -14,7 +14,7 @@ static void onTrackbarChange(int pos, void* userData) {
 /**
  * @brief Constructor. Initializes default blur kernel size.
  */
-BlurFilter::BlurFilter() : blurSize(11) {}
+BlurFilter::BlurFilter() : blurSize(11), trackbarCreated(false) {}
 
 /**
  * @brief Applies Gaussian blur to the input image using the current kernel size.
@@ -31,7 +31,11 @@ void BlurFilter::apply(const cv::Mat& input, cv::Mat& output) {
  * @param windowName Name of the window where the trackbar will be created.
  */
 void BlurFilter::createTrackbar(const std::string& windowName) {
+	if (trackbarCreated) {
+		return; // Trackbar already created
+	}
 	cv::createTrackbar("Blur Size", windowName, &blurSize, 31, onTrackbarChange, this);
+	trackbarCreated = true;
 }
 
 /**
